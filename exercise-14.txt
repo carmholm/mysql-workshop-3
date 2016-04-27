@@ -1,0 +1,7 @@
+Exercise 14
+
+Reverse all fax phone numbers, keeping the phone numbers in a valid format
+
+List all of the new fax phone number values
+
+SELECT REVERSE(content) AS faxNumReversed FROM Phone WHERE subtype="fax";
