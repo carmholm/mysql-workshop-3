@@ -1,0 +1,91 @@
+Exercise 4
+
+List all of the first names for AddressBook.name="Pharetra Ut Limited"
+The first and last letters should be capitalized
+
+mysql> SELECT * FROM AddressBook WHERE name="Pharetra Ut Limited";
++------+-----------+---------------------+---------------------+---------------------+
+| id   | accountId | name                | createdOn           | modifiedOn          |
++------+-----------+---------------------+---------------------+---------------------+
+|   10 |        88 | Pharetra Ut Limited | 2016-05-23 06:09:38 | 2016-05-10 09:47:12 |
+| 1110 |        88 | Pharetra Ut Limited | 2016-05-23 06:09:38 | 2016-05-10 09:47:12 |
++------+-----------+---------------------+---------------------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT 
+    -> (UPPER(LEFT(firstName,1)),
+    -> LOWER(SUBSTRING(firstName,2,length(firstName))), 
+    -> UPPER(SUBSTRING(firstName,length(firstName)))) 
+    -> AS firstName FROM Entry WHERE addressBookId=10 OR addressBookId=1110;
+    
++--------------+
+| firstName    |
++--------------+
+| ZeleniaA     |
+| AbdulL       |
+| IdolaA       |
+| IllanaA      |
+| WinifredD    |
+| BuckminsterR |
+| HeidiI       |
+| NellL        |
+| CiaraA       |
+| SylviaA      |
+| CarynN       |
+| DieterR      |
+| JamaliaA     |
+| HerrodD      |
+| UnityY       |
+| PascaleE     |
+| ColtonN      |
+| JamalL       |
+| AbelL        |
+| ZenaA        |
+| PrescottT    |
+| IdonaA       |
+| PalomaA      |
+| NeveE        |
+| KylaA        |
+| KimberleyY   |
+| JillianN     |
+| AddisonN     |
+| JacquelineE  |
+| SashaA       |
+| LeeE         |
+| SalvadorR    |
+| YokoO        |
+| StacyY       |
+| HaleeE       |
+| BlytheE      |
+| TadD         |
+| HaleyY       |
+| LaraA        |
+| SummerR      |
+| LatifahH     |
+| FaithH       |
+| StaceyY      |
+| JenniferR    |
+| FultonN      |
+| ColinN       |
+| ThaneE       |
+| CarynN       |
+| BoO          |
+| JamalL       |
+| AmenaA       |
+| MelanieE     |
+| DriscollL    |
+| GarethH      |
+| ColtT        |
+| MarthaA      |
+| SierraA      |
+| NitaA        |
+| CelesteE     |
+| KathleenN    |
+| SamuelL      |
+| AaronN       |
+| CheyenneE    |
+| BrettT       |
+| RebekahH     |
++--------------+
+65 rows in set (0.00 sec)
+
