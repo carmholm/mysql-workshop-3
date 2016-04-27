@@ -1,0 +1,38 @@
+Exercise 5
+
+List all of the emails associated to AddressBook.id = 100
+
+mysql> SELECT content FROM ElectronicMail em JOIN Entry e ON em.entryId = e.id WHERE e.addressBookId=100;
++--------------------------------------------+
+| content                                    |
++--------------------------------------------+
+| tortor.dictum@Nulla.org                    |
+| malesuada.fames.ac@Sedeu.co.uk             |
+| velit@vestibulum.co.uk                     |
+| tincidunt.congue.turpis@Inmi.net           |
+| vitae.diam@sapienAeneanmassa.com           |
+| Nunc.ac@parturientmontesnascetur.com       |
+| cursus.vestibulum@pellentesqueSeddictum.ca |
+| nibh.Donec.est@nibh.org                    |
+| eu.tellus@ipsum.co.uk                      |
+| massa.Quisque.porttitor@enimSednulla.edu   |
+| mauris.blandit.mattis@Integersemelit.net   |
+| eget@viverraMaecenasiaculis.net            |
+| vulputate.posuere.vulputate@liberoDonec.ca |
+| Nam.tempor@nisimagna.co.uk                 |
+| tortor.dictum@Nulla.org                    |
+| malesuada.fames.ac@Sedeu.co.uk             |
+| velit@vestibulum.co.uk                     |
+| tincidunt.congue.turpis@Inmi.net           |
+| vitae.diam@sapienAeneanmassa.com           |
+| Nunc.ac@parturientmontesnascetur.com       |
+| cursus.vestibulum@pellentesqueSeddictum.ca |
+| nibh.Donec.est@nibh.org                    |
+| eu.tellus@ipsum.co.uk                      |
+| massa.Quisque.porttitor@enimSednulla.edu   |
+| mauris.blandit.mattis@Integersemelit.net   |
+| eget@viverraMaecenasiaculis.net            |
+| vulputate.posuere.vulputate@liberoDonec.ca |
+| Nam.tempor@nisimagna.co.uk                 |
++--------------------------------------------+
+28 rows in set (0.01 sec)
