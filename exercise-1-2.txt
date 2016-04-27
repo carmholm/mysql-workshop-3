@@ -1,0 +1,36 @@
+Exercise 1
+Reflect the data model shown in schema/addressbook_normalized.png within database decodemtl_addressbook
+
+Account.id is a primary auto-increment key
+AddressBook.id is a primary auto-increment key
+Entry.id is a primary auto-increment key
+Entry.type is an ENUM column permitting phone, address and electronic-mail
+Address.id is a primary auto-increment key
+Address.type is an ENUM column permitting home, work and other
+ElectronicMail.id is a primary auto-increment key
+ElectronicMail.type is an ENUM column permitting home, work and other
+Phone.id is a primary auto-increment key
+Phone.type is an ENUM column permitting home, work and other
+Phone.subtype is an ENUM column permitting landline, cellular and fax
+
+CREATE DATABASE decodemtl_addressbook;
+USE decodemtl_addressbook;
+
+CREATE TABLE Account (id int auto_increment primary key, email VARCHAR(255), password VARCHAR(40), createdOn DATETIME, modifiedOn DATETIME);
+
+CREATE TABLE AddressBook (id int auto_increment primary key, accountId INT, name VARCHAR(255), createdOn DATETIME, modifiedOn DATETIME);
+
+CREATE TABLE Entry (id int auto_increment primary key, addressBookId INT, firstName VARCHAR(100), lastName VARCHAR(100), birthday DATETIME, type ENUM('phone', 'address', 'electronic-mail'));
+
+CREATE TABLE Phone (id int auto_increment primary key, entryId INT, type ENUM('home', 'work', 'other'), subtype ENUM('landline', 'cellular', 'fax'), content VARCHAR(255));
+
+CREATE TABLE Address (id int auto_increment primary key, entryId INT, type ENUM('home', 'work', 'other'), addressLine1 VARCHAR(255), addressLine2 VARCHAR(255), province VARCHAR(128), country VARCHAR(128), postalCode VARCHAR(10));
+
+CREATE TABLE ElectronicMail (id int auto_increment primary key, entryId INT, type ENUM('work', 'home', 'other'), content VARCHAR(255));
+
+Exercise 2
+Bulk import data from the source files into decodemtl_addressbook:
+
+source data/import-account.sql;
+source data/import-addressbook.sql;
+source data/import-entry.sql;
