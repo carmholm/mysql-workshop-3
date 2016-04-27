@@ -1,0 +1,82 @@
+Exercise 10
+
+List all of the person names born between 8PM and 9PM but not in the month of February
+
+mysql> SELECT firstName, lastName, birthday FROM Entry WHERE MONTH(birthday) !=2 AND TIME(birthday) >= "20:00:00" AND TIME(birthday) <= "21:00:00";
+
++-------------+------------+---------------------+
+| firstName   | lastName   | birthday            |
++-------------+------------+---------------------+
+| Ima         | Manning    | 1989-03-10 20:45:05 |
+| Ivana       | Wong       | 1973-03-30 20:52:45 |
+| Jason       | Medina     | 1956-11-23 20:33:40 |
+| Elijah      | Espinoza   | 1960-03-16 20:03:52 |
+| Malachi     | Hamilton   | 1984-04-24 20:48:15 |
+| Harrison    | English    | 1998-08-22 20:10:21 |
+| Wayne       | Gardner    | 1990-07-14 20:13:17 |
+| Devin       | Bishop     | 1962-01-19 20:45:35 |
+| Hayes       | Johnson    | 1949-03-09 20:39:39 |
+| Macy        | Preston    | 1963-06-22 20:30:09 |
+| Justina     | Frank      | 1985-05-12 20:01:34 |
+| Willa       | Henson     | 1962-11-07 20:08:58 |
+| Elton       | Head       | 1966-10-19 20:26:28 |
+| Ross        | Schroeder  | 1946-10-02 20:51:20 |
+| Joan        | Reese      | 1979-09-24 20:56:56 |
+| Kylynn      | Baxter     | 1950-08-10 20:23:47 |
+| Gage        | Mitchell   | 1964-08-05 20:10:04 |
+| Avye        | Potts      | 1984-10-17 20:03:30 |
+| Lynn        | Saunders   | 1986-12-23 20:11:06 |
+| Fleur       | Guthrie    | 1981-09-24 20:05:13 |
+| Branden     | Fry        | 1952-05-18 20:26:05 |
+| Nathaniel   | Humphrey   | 1978-09-28 20:08:29 |
+| Hanna       | Melendez   | 1955-06-01 20:27:54 |
+| Harrison    | Odom       | 1979-01-29 20:34:48 |
+| Conan       | Mullen     | 1961-09-15 20:37:29 |
+| Gisela      | Mooney     | 1970-03-19 20:11:29 |
+| Fleur       | Lancaster  | 1965-10-28 20:07:12 |
+| Lois        | Roberson   | 2000-03-28 20:50:47 |
+| Reuben      | Henderson  | 1969-06-15 20:00:50 |
+| Aladdin     | Adkins     | 1967-12-22 20:04:23 |
+| Stella      | Puckett    | 1954-07-26 20:41:53 |
+| Nero        | Johnson    | 1987-03-27 20:25:11 |
+| Zenaida     | Mccarty    | 1989-01-01 20:38:34 |
+| Madison     | Shepherd   | 1979-03-25 20:39:20 |
+| Jordan      | Mayer      | 1981-04-05 20:13:29 |
+| Quynn       | Marks      | 1980-12-17 20:06:06 |
+| Aquila      | Burt       | 1981-12-09 20:56:31 |
+| Blossom     | Franco     | 1998-01-09 20:24:51 |
+| Zachary     | Carey      | 1968-07-14 20:34:17 |
+| Quintessa   | Schmidt    | 1975-11-09 20:59:02 |
+| Rylee       | Perez      | 1952-10-21 20:17:54 |
+| Colton      | Browning   | 1946-08-29 20:51:06 |
+| Ima         | Kirkland   | 1982-06-18 20:21:35 |
+| Tad         | Vaughan    | 1966-08-30 20:32:18 |
+| Sylvia      | Santiago   | 1989-12-24 20:09:41 |
+| Brynn       | Stein      | 1964-01-03 20:43:48 |
+| Jesse       | Russell    | 1948-03-15 20:39:13 |
+| Deirdre     | Farley     | 1955-08-30 20:36:57 |
+| Stacey      | Allen      | 1957-07-06 20:16:09 |
+| Nelle       | Crane      | 1951-05-08 20:49:18 |
+| Uriah       | Herring    | 1954-09-25 20:41:09 |
+| Summer      | Tate       | 1993-03-04 20:41:20 |
+| Matthew     | Rodriguez  | 1982-07-31 20:15:12 |
+| Amela       | Bell       | 1946-01-15 20:10:27 |
+| Nolan       | Santos     | 1961-01-05 20:06:47 |
+| Zane        | Olsen      | 1956-09-14 20:14:51 |
+| Charles     | Kirk       | 1986-11-14 20:57:10 |
+| Katell      | Tanner     | 1989-05-02 20:58:57 |
+| Brent       | Lee        | 1957-03-26 20:14:26 |
+| Hillary     | Hebert     | 1988-07-22 20:36:22 |
+| Genevieve   | Booth      | 1985-06-21 20:49:03 |
+| Connor      | Bruce      | 1954-11-07 20:17:00 |
+| Marvin      | Rosario    | 1987-01-12 20:48:41 |
+| Aurora      | Santiago   | 1957-05-16 20:23:06 |
+| Rhoda       | Mcleod     | 1963-10-02 20:36:17 |
+| Marcia      | Simmons    | 1979-06-04 20:12:52 |
+| Kyle        | Blake      | 1959-08-13 20:29:11 |
+| Baxter      | Oneal      | 1957-09-16 20:59:38 |
+| Ivor        | Powers     | 1967-08-12 20:23:54 |
+| Briar       | Small      | 1981-01-14 20:58:43 |
+| Jayme       | Cleveland  | 1997-11-19 20:21:27 |
++-------------+------------+---------------------+
+250 rows in set (0.03 sec)
