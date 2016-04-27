@@ -1,0 +1,5 @@
+Exercise 13
+
+List the date difference, in days, between AddressBook creation and modification dates
+
+SELECT createdOn, modifiedOn, DATEDIFF(createdOn, modifiedOn) FROM AddressBook;
