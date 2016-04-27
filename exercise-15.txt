@@ -1,0 +1,14 @@
+Exercise 15
+
+Transform all work emails into home emails and vice versa
+
+mysql> UPDATE  ElectronicMail
+    -> SET     type =
+    ->         CASE
+    ->         WHEN type = 'home' THEN
+    ->                 'work'
+    ->         WHEN type = 'work' THEN
+    ->                 'home'
+    ->         END;
+Query OK, 4600 rows affected (0.17 sec)
+Rows matched: 4600  Changed: 4600  Warnings: 0
