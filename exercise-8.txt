@@ -1,0 +1,14 @@
+Exercise 8
+
+List how many phones were landlines, cellular and fax for entries with birthdates between October 1950 and October 1960
+
+mysql> SELECT subtype, COUNT(*) AS Num FROM Phone p JOIN Entry e ON p.entryId=e.id WHERE e.birthday BETWEEN CAST('1950-10-01' AS DATE) AND CAST('1960-10-01' AS DATE) AND subtype IN ('fax','cellular', 'landline') GROUP BY subtype;
++----------+-----+
+| subtype  | Num |
++----------+-----+
+| landline | 340 |
+| cellular | 276 |
+| fax      | 268 |
++----------+-----+
+3 rows in set (0.02 sec)
+
